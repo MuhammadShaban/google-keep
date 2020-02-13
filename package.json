@@ -1,0 +1,34 @@
+{
+    "name": "google-keep",
+    "version": "1.0.0",
+    "description": "Google keep with Electron",
+    "homepage": "https://github.com/MuhammadShaban/google-keep",
+    "author": {
+        "name": "Muhammad Shaban",
+        "email": "muhammad.shaban.dev@gmail.com"
+    },
+    "keywords": [
+        "angular",
+        "keep",
+        "google keep"
+    ],
+    "main": "main.js",
+    "private": false,
+    "scripts": {
+        "start": "electron . --serve",
+        "build": "electron-builder build",
+        "build:linux": "npm run build -- --linux && npm run build:package",
+        "build:windows": "npm run build -- --windows && npm run build:package",
+        "build:mac": "npm run build -- --mac && npm run build:package",
+        "build:package": "node packager.js",
+        "release": "git add . && git commit -m \"Update release\" && git push && git subtree push --prefix build origin gh-pages",
+        "postinstall": "electron-builder install-app-deps",
+        "clean": "rimraf release packages"
+    },
+    "devDependencies": {
+        "electron": "8.0.0",
+        "electron-builder": "22.3.2",
+        "rimraf": "3.0.2",
+        "zip-a-folder": "0.0.12"
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "productName": "google-keep",
+    "directories": {
+        "output": "release/"
+    },
+    "files": [],
+    "win": {
+        "icon": "icons/icon.png",
+        "target": [
+            "portable",
+            {
+                "target": "nsis",
+                "arch": [
+                    "x64",
+                    "ia32"
+                ]
+            }
+        ]
+    },
+    "mac": {
+        "icon": "icons/icon.png",
+        "target": [
+            "dmg",
+            "pkg"
+        ]
+    },
+    "linux": {
+        "icon": "icons/icon.png",
+        "category": "Office",
+        "target": [
+            "AppImage" // snap, rpm, deb
+        ]
+    }
+}
